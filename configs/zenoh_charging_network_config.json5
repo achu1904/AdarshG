@@ -1,0 +1,17 @@
+{
+    plugins: {
+      rest: {                        // activate and configure the REST plugin
+        http_port: 8000              // with HTTP server listening on port 8000
+      },
+      storage_manager: {             // activate and configure the storage_manager plugin
+        storages: {
+          energy_maestro: {                  // configure a "energy maestro" storage
+            key_expr: "energy_maestro/**",   // which subscribes and replies to query on energy_maestro/**
+            volume: {                        // and using the "memory" volume (always present by default)
+              id: "memory"
+            }
+          }
+        }
+      }
+    }
+  }
